@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#102a2e">
+    <meta name="description" content="Public-Benefits Application QA Investigation — Jessica A.'s QA and systems portfolio.">
+    <title>Public-Benefits Application QA Investigation | Jessica A.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#article">Skip to main content</a>
+    <header class="site-header">
+      <a class="wordmark" href="../index.html" aria-label="Jessica A. portfolio home">
+        <span class="wordmark-mark" aria-hidden="true">JA</span>
+        <span>Jessica A.</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#about">About</a>
+        <a href="../assets/resume/Jessica_A_Resume.pdf">Résumé</a>
+        <a class="nav-contact" href="mailto:itcouldbebetter404@gmail.com">Contact</a>
+      </nav>
+    </header>
+    <main id="article">
+      <header class="article-hero">
+        <p class="eyebrow">QA case study</p>
+        <h1>Public-Benefits Application QA Investigation</h1>
+      </header>
+      <div class="article-layout">
+        <aside class="article-sidebar">
+          <p>Part of Jessica A.'s QA and systems portfolio.</p>
+          <a href="../index.html">← Portfolio home</a>
+        </aside>
+        <article class="prose">
+          <p><strong>Real-world QA case study</strong></p>
+<blockquote>
+<p>I documented reliability problems encountered during an ordinary public-benefits application workflow, translated the observed behavior into clear defect statements, and assessed the risk to users and downstream processing.</p>
+</blockquote>
+<p><strong>Role:</strong> User-observer and independent QA investigator</p>
+<p><strong>Focus:</strong> Exploratory testing, black-box testing, defect documentation, risk assessment, and evidence preservation</p>
+<p><strong>System:</strong> Public-benefits application workflow</p>
+<p><strong>Status:</strong> Public case study prepared from privacy-safe findings</p>
+<p><a href="../projects/projects.html">← Back to Projects</a></p>
+<hr>
+<h2>At a glance</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Problem</td>
+<td>Uploaded evidence and extracted information did not always behave consistently with what the user could see.</td>
+</tr>
+<tr>
+<td>Scope</td>
+<td>Document upload, OCR and entity extraction, cross-field validation, evidence mapping, and user-facing feedback</td>
+</tr>
+<tr>
+<td>Approach</td>
+<td>Observe the live workflow, compare visible behavior with expected behavior, isolate distinct issues, assess risk, and document recommendations</td>
+</tr>
+<tr>
+<td>Findings</td>
+<td>Three material defects involving attachment mapping, entity extraction, and validation feedback</td>
+</tr>
+<tr>
+<td>Public boundary</td>
+<td>Personal application data, source documents, account details, and identifying screenshots are not included</td>
+</tr>
+</tbody></table>
+<h2>Context and independence</h2>
+<p>This case study documents issues observed during an ordinary public-benefits application workflow. It was not commissioned by, affiliated with, or endorsed by the platform or its operating organization. It did not involve penetration testing, security testing, attempts to bypass access controls, or access to another person’s information.</p>
+<p>The public version focuses on system behavior and QA reasoning. Private source material and personally identifying information remain outside this repository.</p>
+<h2>The problem</h2>
+<p>A public-benefits application depends on accurate document handling and clear feedback. A user needs to know that the correct evidence was attached to the correct record, that information extracted from a document is accurate, and that any warning corresponds to values the user can inspect and correct.</p>
+<p>During the workflow, I observed behavior that called each of those expectations into question:</p>
+<ul>
+<li>one uploaded document appeared to be associated with multiple evidence rows;</li>
+<li>the document-processing system misclassified the identity or organization represented in a document;</li>
+<li>a validation warning did not match the visible values shown to the user.</li>
+</ul>
+<p>These were not merely cosmetic inconsistencies. Each issue could affect user confidence, correction decisions, or the reliability of information submitted for review.</p>
+<h2>Scope</h2>
+<h3>In scope</h3>
+<ul>
+<li>document upload behavior;</li>
+<li>OCR and entity extraction;</li>
+<li>cross-field validation;</li>
+<li>evidence-to-record mapping;</li>
+<li>visible feedback presented to the user;</li>
+<li>user and processing risks arising from the observed behavior.</li>
+</ul>
+<h3>Out of scope</h3>
+<ul>
+<li>source-code review;</li>
+<li>internal database inspection;</li>
+<li>performance or load testing;</li>
+<li>security testing;</li>
+<li>administrative processing after submission;</li>
+<li>claims about root cause that could not be observed from the user interface.</li>
+</ul>
+<p>Defining these boundaries was important because black-box observations can establish visible behavior and impact, but they cannot prove the internal implementation responsible for a defect.</p>
+<h2>Test approach</h2>
+<p>I treated the experience as a structured black-box investigation:</p>
+<ol>
+<li>Follow the normal application and document-upload workflow.</li>
+<li>Compare the visible result with the result a user would reasonably expect.</li>
+<li>Separate distinct symptoms instead of combining them into one broad complaint.</li>
+<li>Record the affected area, expected behavior, actual behavior, and potential impact.</li>
+<li>Avoid claiming an internal cause without implementation evidence.</li>
+<li>Recommend acceptance criteria that could be checked during a future fix.</li>
+<li>Remove or withhold personal information from the public case study.</li>
+</ol>
+<p>The approach combined exploratory testing, observation, reproduction and isolation where possible, risk-based assessment, and defect documentation.</p>
+<h2>Findings</h2>
+<h3>Finding 1: Evidence attachment mapping</h3>
+<p><strong>Observed behavior</strong></p>
+<p>One uploaded document appeared in multiple evidence rows.</p>
+<p><strong>Expected behavior</strong></p>
+<p>Each visible evidence row should clearly identify the document associated with that record. A single upload should not appear to represent multiple distinct records unless the interface explains that relationship.</p>
+<p><strong>Why it matters</strong></p>
+<p>Ambiguous attachment mapping can make a user unsure whether the correct evidence has been submitted. It may also create a risk that one document is interpreted as support for multiple records.</p>
+<p><strong>Recommended acceptance criteria</strong></p>
+<ul>
+<li>Each evidence row displays the correct associated document.</li>
+<li>Reusing one document across records requires an intentional, visible user action.</li>
+<li>Removing or replacing an attachment affects only the intended record.</li>
+<li>The final review screen accurately represents every document-to-record relationship.</li>
+</ul>
+<h3>Finding 2: OCR or entity extraction</h3>
+<p><strong>Observed behavior</strong></p>
+<p>The document-processing system classified an individual signer as a different organizational entity.</p>
+<p><strong>Expected behavior</strong></p>
+<p>Extracted names and entity types should match the source document, or the interface should clearly request confirmation when confidence is insufficient.</p>
+<p><strong>Why it matters</strong></p>
+<p>Incorrect entity extraction can introduce inaccurate data into the application and make it difficult for a user to know what must be corrected.</p>
+<p><strong>Recommended acceptance criteria</strong></p>
+<ul>
+<li>Extracted names match the relevant text in the source document.</li>
+<li>An individual is not silently changed into a different organization or entity.</li>
+<li>Low-confidence extraction is identified for user review.</li>
+<li>The user can correct extracted data before submission.</li>
+<li>Corrections persist through review and submission.</li>
+</ul>
+<h3>Finding 3: Cross-field validation feedback</h3>
+<p><strong>Observed behavior</strong></p>
+<p>The system displayed a validation warning that did not correspond to the values visible to the user.</p>
+<p><strong>Expected behavior</strong></p>
+<p>A validation message should identify the affected fields, explain the rule being applied, and match the values currently displayed.</p>
+<p><strong>Why it matters</strong></p>
+<p>When a warning contradicts the visible data, the user cannot confidently determine what to change. Repeated guesswork may delay submission or introduce new errors.</p>
+<p><strong>Recommended acceptance criteria</strong></p>
+<ul>
+<li>The warning is triggered only when the relevant validation rule fails.</li>
+<li>The message identifies the fields involved.</li>
+<li>The message reflects the current visible values.</li>
+<li>Correcting the values clears the warning.</li>
+<li>Returning to the page does not restore a warning after a valid correction.</li>
+</ul>
+<h2>Risk assessment</h2>
+<table>
+<thead>
+<tr>
+<th>Risk area</th>
+<th>Potential consequence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Data accuracy</td>
+<td>Extracted or mapped information may not represent the source document correctly.</td>
+</tr>
+<tr>
+<td>User decision-making</td>
+<td>A user may change correct information because the interface suggests that it is wrong.</td>
+</tr>
+<tr>
+<td>Evidence integrity</td>
+<td>A reviewer may receive an unclear relationship between documents and application records.</td>
+</tr>
+<tr>
+<td>Completion and access</td>
+<td>Confusing errors may delay or prevent completion of an important benefits workflow.</td>
+</tr>
+<tr>
+<td>Trust</td>
+<td>Contradictory system feedback can reduce confidence in the application process.</td>
+</tr>
+</tbody></table>
+<p>This assessment describes plausible impact from the observed behavior. It does not claim that every risk occurred in downstream processing.</p>
+<h2>Evidence and privacy</h2>
+<p>The original workflow involved personal documents and application information. Those materials are not published here.</p>
+<p>The public evidence package is intentionally limited to:</p>
+<ul>
+<li>privacy-safe descriptions of the observed behavior;</li>
+<li>expected-versus-actual comparisons;</li>
+<li>defect-specific impact analysis;</li>
+<li>recommended acceptance criteria;</li>
+<li>the investigation method and scope boundaries.</li>
+</ul>
+<p>No personal documents, account details, application identifiers, correspondence, or identifying screenshots belong in this repository.</p>
+<h2>Recommendations</h2>
+<ol>
+<li>Make document-to-record relationships explicit on upload and final review screens.</li>
+<li>Add user confirmation for uncertain OCR or entity extraction.</li>
+<li>Preserve user corrections throughout the complete workflow.</li>
+<li>Rewrite validation messages so they name the affected fields and explain the corrective action.</li>
+<li>Add regression coverage for upload mapping, OCR correction, cross-field validation, and review-screen accuracy.</li>
+<li>Test with realistic document variations while protecting sensitive data.</li>
+</ol>
+<h2>What I learned</h2>
+<ul>
+<li>A user-facing inconsistency can signal a larger data-quality risk.</li>
+<li>Separating symptoms into distinct defects makes investigation and remediation clearer.</li>
+<li>Expected and actual behavior should be stated without guessing at root cause.</li>
+<li>Risk analysis is strongest when it distinguishes observed facts from plausible consequences.</li>
+<li>Privacy requirements affect what evidence can be published, but they do not prevent a clear explanation of method and judgment.</li>
+<li>Acceptance criteria turn a complaint into something a team can verify.</li>
+</ul>
+<h2>Skills demonstrated</h2>
+<ul>
+<li>Exploratory and black-box testing</li>
+<li>Expected-versus-actual analysis</li>
+<li>Defect decomposition and documentation</li>
+<li>Risk and user-impact assessment</li>
+<li>Acceptance-criteria design</li>
+<li>Evidence and privacy judgment</li>
+<li>Clear communication of technical findings</li>
+</ul>
+<h2>Portfolio artifacts</h2>
+<ul>
+<li><a href="defect-summary.html">Defect Summary</a> — concise expected-versus-actual records for the three findings</li>
+</ul>
+<hr>
+<p><a href="../projects/projects.html">← Back to Projects</a> · <a href="../skill-evidence/skills.html">View the Skills Map</a></p>
+
+        </article>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>Designed and documented by Jessica A.</p>
+      <p>Jacksonville metropolitan area · 2026</p>
+    </footer>
+  </body>
+</html>

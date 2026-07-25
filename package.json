@@ -1,0 +1,11 @@
+{
+  "name": "itcanbebetter-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build-pages.cjs"
+  },
+  "dependencies": {
+    "marked": "^15.0.12"
+  }
+}

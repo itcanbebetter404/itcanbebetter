@@ -22,7 +22,17 @@ I designed a private personal knowledge system around how I naturally capture, p
 
 [Read the Tana Organization case study](tana-organization.md)
 
-## Work being developed
+## ShiftRight
+
+**Web application QA case study**
+
+I created and tested a worker-focused shift-tracking application using build verification, privacy-aware exploratory testing, a controlled synthetic guest journey, and calculation checks.
+
+**Skills demonstrated:** Web application testing · Privacy testing · Expected-versus-actual analysis · CI verification · Synthetic test data
+
+[Read the ShiftRight web application QA case study](shiftright.md)
+
+## Work still being developed
 
 Additional QA projects remain private until their tests have been executed, results verified, and evidence reviewed for safe publication. Planned or incomplete work is not presented as completed evidence.
 

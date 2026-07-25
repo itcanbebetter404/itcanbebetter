@@ -44,12 +44,14 @@ I am also considering closely related entry-level roles where testing, troublesh
 
 - [Public-Benefits Application QA Investigation](qa-report/report.md) — exploratory testing, defect documentation, risk assessment, and acceptance criteria
 - [Tana Organization](projects/tana-organization.md) — systems thinking, information architecture, workflow design, and maintainability
+- [ShiftRight Web Application QA Case Study](projects/shiftright.md) — web application testing, privacy-aware test decisions, CI verification, and controlled synthetic data
 
 ## Contact
 
 Professional email: [itcouldbebetter404@gmail.com](mailto:itcouldbebetter404@gmail.com)
 
-LinkedIn and resume links will be added after they have been reviewed for public sharing.
+My reviewed résumé is available from the navigation on every portfolio page. A
+LinkedIn link can be added later after the profile is ready for public sharing.
 
 ---
 

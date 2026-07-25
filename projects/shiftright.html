@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#102a2e">
+    <meta name="description" content="ShiftRight Web Application QA Case Study — Jessica A.'s QA and systems portfolio.">
+    <title>ShiftRight Web Application QA Case Study | Jessica A.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#article">Skip to main content</a>
+    <header class="site-header">
+      <a class="wordmark" href="../index.html" aria-label="Jessica A. portfolio home">
+        <span class="wordmark-mark" aria-hidden="true">JA</span>
+        <span>Jessica A.</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#about">About</a>
+        <a href="../assets/resume/Jessica_A_Resume.pdf">Résumé</a>
+        <a class="nav-contact" href="mailto:itcouldbebetter404@gmail.com">Contact</a>
+      </nav>
+    </header>
+    <main id="article">
+      <header class="article-hero">
+        <p class="eyebrow">Web application QA case study</p>
+        <h1>ShiftRight Web Application QA Case Study</h1>
+      </header>
+      <div class="article-layout">
+        <aside class="article-sidebar">
+          <p>Part of Jessica A.'s QA and systems portfolio.</p>
+          <a href="../index.html">← Portfolio home</a>
+        </aside>
+        <article class="prose">
+          <p><strong>Status:</strong> Active, evidence-backed case study<br><strong>Product:</strong> Worker-focused shift tracking web application<br><strong>Live application:</strong> <a href="https://shiftright.lovable.app">shiftright.lovable.app</a></p>
+<h2>At a glance</h2>
+<p>ShiftRight is a worker-focused project for recording financial and workplace-experience information across individual shifts. It brings hours, sales, tips, mood, energy, recognition, and management support into one structured record.</p>
+<p>I created the product concept and shaped the application with AI-assisted tools, then approached the recovered web app and supporting workbook as a QA and product-support project. The current evidence demonstrates build verification, privacy-aware testing, one successful synthetic guest journey, controlled calculation checks, and clear documentation of what remains untested.</p>
+<p>This case study does not claim validated workplace outcomes, completed authenticated testing, or representative user research.</p>
+<h2>The problem</h2>
+<p>A worker may remember whether a shift felt good or bad, but those memories are difficult to compare over time. Financial results and workplace experience are often recorded in different places—or not recorded at all.</p>
+<p>ShiftRight explores whether a consistent, worker-owned record can make those patterns easier to inspect. The current project demonstrates the data structure, application workflow, and early presentation approach. It does not prove that the product improves financial or workplace outcomes.</p>
+<h2>My role</h2>
+<p>I created the ShiftRight concept and directed its development with help from AI-assisted tools. My contribution included:</p>
+<ul>
+<li>defining the worker problem and intended data points;</li>
+<li>shaping the product, content, and mobile-first application direction;</li>
+<li>organizing the app, workbook, brand, and QA materials;</li>
+<li>reviewing the application and identifying privacy and portability risks;</li>
+<li>separating synthetic demonstration data from private workplace data;</li>
+<li>using test findings to guide corrections and verification;</li>
+<li>documenting passing, failing, blocked, and not-run checks honestly.</li>
+</ul>
+<p>I do not present AI-generated source code as evidence that I manually authored every line. My ownership is the problem definition, product direction, review, decisions, testing judgment, and evidence boundaries.</p>
+<h2>Test approach</h2>
+<p>The completed work combines application, build, privacy, and calculation checks:</p>
+<ol>
+<li>Recovered and sanitized the Lovable application source without importing its Git history or environment file.</li>
+<li>Scanned the imported source for known credential patterns and configuration risks.</li>
+<li>Repaired dependency-lock inconsistencies and verified clean installation, lint, and production build through GitHub Actions.</li>
+<li>Performed read-only availability checks on the public landing, authentication, manifest, and robots routes.</li>
+<li>Reviewed the guest shift-entry workflow for privacy-safe demonstration data.</li>
+<li>Stopped testing when the restaurant selector exposed a real workplace/location label without a verified synthetic option.</li>
+<li>Added and verified a clearly labeled <strong>Portfolio Demo Restaurant</strong> choice.</li>
+<li>Submitted one fictional guest shift and compared the dashboard values with the controlled inputs.</li>
+<li>Built and re-imported a separate synthetic workbook and checked ten expected calculations.</li>
+</ol>
+<h2>Verified results</h2>
+<h3>Build and code-quality verification</h3>
+<ul>
+<li>GitHub Actions completed <code>npm ci</code>, the configured lint command, and the production build successfully on Node.js 22.</li>
+<li>ESLint completed with zero errors and seven documented Fast Refresh warnings.</li>
+<li>The clean imported source excluded <code>.env</code>; the credential-pattern scan did not find the searched patterns.</li>
+</ul>
+<p>These results verify build reproducibility in the tested CI environment. They do not verify application behavior or production integrations.</p>
+<h3>Privacy defect and correction</h3>
+<p>During guest shift-entry review, the restaurant selector displayed a real workplace/location label and did not provide a verified synthetic choice. I stopped before submitting data.</p>
+<p>A clearly labeled <strong>Portfolio Demo Restaurant</strong> option was added. The deployed application was then checked to confirm that the synthetic choice was present before testing continued.</p>
+<h3>Synthetic guest journey</h3>
+<p>One fictional guest shift was submitted using the approved demonstration option. The resulting dashboard displayed:</p>
+<ul>
+<li>1 recorded shift;</li>
+<li>$480 in sales;</li>
+<li>$96 in tips;</li>
+<li>$16.00 per hour;</li>
+<li>6.0 hours;</li>
+<li>average mood of 4.0, labeled “Good.”</li>
+</ul>
+<p>Those values matched the controlled inputs for the current guest session. Persistence across sessions or devices was not tested.</p>
+<h3>Controlled workbook checks</h3>
+<p>A separate demonstration workbook was created with ten fictional records. After export and re-import:</p>
+<ul>
+<li>all four sheets rendered without visible clipping, overlap, or broken charts;</li>
+<li>no <code>#REF!</code>, <code>#DIV/0!</code>, <code>#VALUE!</code>, <code>#NAME?</code>, or <code>#N/A</code> values were found;</li>
+<li>expected and actual totals matched for shifts, hours, sales, tips, recognition rate, willingness-to-work-again rate, average mood, and average management support;</li>
+<li>zero hours returned a blank Tips/Hour result;</li>
+<li>zero sales returned a blank Tip % result;</li>
+<li>all ten controlled checks displayed <code>PASS</code>.</li>
+</ul>
+<p>These are formula and presentation checks using synthetic test data. They are not evidence of product impact or user outcomes.</p>
+<h2>Portfolio evidence</h2>
+<h3>Synthetic dashboard</h3>
+<p><img src="../assets/shiftright/ShiftRight_Synthetic_Dashboard.png" alt="ShiftRight synthetic demonstration dashboard"></p>
+<p>This dashboard is calculated from ten fictional shift records. It demonstrates totals, grouped comparisons, zero-denominator handling, and rating boundaries. The displayed patterns are test output—not research findings or measured user outcomes.</p>
+<h3>Controlled calculation checks</h3>
+<p><img src="../assets/shiftright/ShiftRight_QA_Evidence.png" alt="ShiftRight expected-versus-actual QA evidence"></p>
+<p>The QA sheet compares expected and actual results for ten controlled checks. Every displayed check passed in the reviewed workbook.</p>
+<p><a href="../assets/shiftright/ShiftRight_Portfolio_Demo.xlsx">Download the privacy-reviewed synthetic demonstration workbook</a></p>
+<p>The workbook contains only explicitly labeled synthetic records. Its four visible sheets were reviewed for privacy, metadata, formula errors, and rendering quality before being added to this portfolio.</p>
+<h2>Important limitations</h2>
+<p>The current evidence does not establish:</p>
+<ul>
+<li>completed authenticated end-to-end testing;</li>
+<li>persistence across sessions or devices;</li>
+<li>cross-browser or responsive behavior;</li>
+<li>API, database, authentication, authorization, or multi-user behavior;</li>
+<li>keyboard, screen-reader, contrast, zoom/reflow, or broader accessibility performance;</li>
+<li>performance, load, reliability, or recovery behavior;</li>
+<li>real-user usability or validated workplace outcomes.</li>
+</ul>
+<p>The full repository remains private. The synthetic dashboard, QA evidence image, and demonstration workbook passed a publication review. The current Lovable landing-page screenshot is excluded because the café photograph used by the application does not yet have documented provenance or publication rights.</p>
+<h2>Skills demonstrated</h2>
+<ul>
+<li>Exploratory and black-box testing</li>
+<li>Expected-versus-actual analysis</li>
+<li>Privacy-aware stopping decisions</li>
+<li>Defect identification and verification</li>
+<li>Controlled synthetic test data</li>
+<li>Build and CI evidence interpretation</li>
+<li>Calculation verification</li>
+<li>Risk and limitation documentation</li>
+<li>AI-assisted product direction and QA judgment</li>
+</ul>
+<h2>What I learned</h2>
+<ul>
+<li>A passing build is valuable evidence, but it is not evidence that user workflows work.</li>
+<li>Synthetic demonstration data should be designed into a portfolio project before testing begins.</li>
+<li>A tester should stop when the available path could expose private information.</li>
+<li>Expected values make a small controlled dataset more useful than a larger unstructured one.</li>
+<li>Passing, failing, blocked, and not-run results all belong in a credible QA record.</li>
+</ul>
+<hr>
+<p><a href="projects.html">Return to all projects</a> · <a href="../index.html">Return to the portfolio home</a></p>
+
+        </article>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>Designed and documented by Jessica A.</p>
+      <p>Jacksonville metropolitan area · 2026</p>
+    </footer>
+  </body>
+</html>
