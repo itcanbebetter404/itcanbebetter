@@ -16,6 +16,11 @@ The projects are the evidence. This map includes only capabilities supported by 
 | Design tradeoff analysis | [Tana Organization](../projects/tana-organization.md) |
 | Automation and maintainability judgment | [Tana Organization](../projects/tana-organization.md) |
 | Technical and process documentation | [Public-Benefits Application QA Investigation](../qa-report/report.md); [Tana Organization](../projects/tana-organization.md) |
+| Web application testing | [ShiftRight Web Application QA Case Study](../projects/shiftright.md) |
+| Privacy-aware test stopping and retest | [ShiftRight Web Application QA Case Study](../projects/shiftright.md) |
+| CI build and lint verification | [ShiftRight Web Application QA Case Study](../projects/shiftright.md) |
+| Synthetic test-data design | [ShiftRight Web Application QA Case Study](../projects/shiftright.md) |
+| Controlled calculation verification | [ShiftRight Web Application QA Case Study](../projects/shiftright.md) |
 
 API testing, SQL, Jira, and executed test-case evidence will be added only after the corresponding work has been completed and verified.
 

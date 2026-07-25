@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Jessica A.'s portfolio of quality assurance investigations, systems thinking, and clear technical documentation."
+    >
+    <meta name="theme-color" content="#102a2e">
+    <title>Jessica A. | QA &amp; Systems Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Jessica A. portfolio home">
+        <span class="wordmark-mark" aria-hidden="true">JA</span>
+        <span>Jessica A.</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="assets/resume/Jessica_A_Resume.pdf">Résumé</a>
+        <a class="nav-contact" href="mailto:itcouldbebetter404@gmail.com">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Quality assurance · Systems thinking</p>
+          <h1 id="hero-title">
+            I find the gap between
+            <em>what should happen</em>
+            and what actually happens.
+          </h1>
+          <p class="hero-intro">
+            I investigate digital experiences, trace inconsistent behavior, and
+            turn the evidence into clear documentation teams can act on.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">Explore my work</a>
+            <a class="button button-secondary" href="assets/resume/Jessica_A_Resume.pdf">
+              Download résumé
+            </a>
+            <a class="button button-secondary" href="mailto:itcouldbebetter404@gmail.com">
+              Get in touch
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-note" aria-label="Portfolio focus">
+          <span class="note-number">01</span>
+          <p>Currently pursuing</p>
+          <strong>Junior Manual QA Tester<br>and QA Analyst roles</strong>
+          <span class="note-location">Jacksonville metropolitan area</span>
+        </aside>
+      </section>
+
+      <section class="section work-section" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2 id="work-title">The gap between intention and reality.</h2>
+          </div>
+          <p>
+            Each case study documents what I observed, how I investigated it,
+            and the potential risks if the behavior recurs. Broader impact
+            would require additional testing and user research.
+          </p>
+        </div>
+
+        <div class="project-list">
+          <article class="project-card project-card-featured">
+            <div class="project-index" aria-hidden="true">01</div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="status status-complete">Case study</span>
+                <span>Quality assurance</span>
+              </div>
+              <h3>Public-Benefits Application QA Investigation</h3>
+              <p>
+                A real-world black-box investigation of evidence mapping, OCR
+                extraction, and validation feedback—and the potential risks if
+                those behaviors recur for people navigating an essential service.
+              </p>
+              <ul class="tag-list" aria-label="Skills demonstrated">
+                <li>Exploratory testing</li>
+                <li>Defect documentation</li>
+                <li>Risk assessment</li>
+                <li>Acceptance criteria</li>
+              </ul>
+              <a class="text-link" href="qa-report/report.html">
+                Read the investigation <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-index" aria-hidden="true">02</div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="status status-complete">Case study</span>
+                <span>Systems design</span>
+              </div>
+              <h3>Tana Organization</h3>
+              <p>
+                A personal knowledge-system design shaped around real capture,
+                processing, retrieval, and action behaviors—with explicit
+                constraints, tradeoffs, and maintainability decisions.
+              </p>
+              <ul class="tag-list" aria-label="Skills demonstrated">
+                <li>Systems thinking</li>
+                <li>Information architecture</li>
+                <li>Workflow design</li>
+                <li>Documentation</li>
+              </ul>
+              <a class="text-link" href="projects/tana-organization.html">
+                Read the case study <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!--
+            ADDING A PROJECT:
+            Copy the article below, remove the "project-card-upcoming" class,
+            update the number, text, tags, and link, then remove aria-disabled.
+          -->
+          <article class="project-card">
+            <div class="project-index" aria-hidden="true">03</div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="status status-complete">Active case study</span>
+                <span>Web application testing</span>
+              </div>
+              <h3>ShiftRight</h3>
+              <p>
+                A worker-focused web application tested through build
+                verification, privacy-aware exploratory testing, a controlled
+                guest journey, and synthetic calculation checks.
+              </p>
+              <ul class="tag-list" aria-label="Skills demonstrated">
+                <li>Web application testing</li>
+                <li>Privacy testing</li>
+                <li>CI verification</li>
+                <li>Synthetic test data</li>
+              </ul>
+              <a class="text-link" href="projects/shiftright.html">
+                Read the case study <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section skills-section" id="skills" aria-labelledby="skills-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">How I contribute</p>
+            <h2 id="skills-title">Careful thinking, clearly communicated.</h2>
+          </div>
+        </div>
+
+        <div class="skill-grid">
+          <article>
+            <span class="skill-number" aria-hidden="true">01</span>
+            <h3>Investigate</h3>
+            <p>
+              Explore system behavior, identify patterns, and separate observed
+              facts from assumptions.
+            </p>
+          </article>
+          <article>
+            <span class="skill-number" aria-hidden="true">02</span>
+            <h3>Document</h3>
+            <p>
+              Capture expected and actual behavior with enough context for
+              someone else to understand and act.
+            </p>
+          </article>
+          <article>
+            <span class="skill-number" aria-hidden="true">03</span>
+            <h3>Assess</h3>
+            <p>
+              Connect defects to user and business risk, then clarify severity,
+              constraints, and remaining unknowns.
+            </p>
+          </article>
+          <article>
+            <span class="skill-number" aria-hidden="true">04</span>
+            <h3>Improve</h3>
+            <p>
+              Translate findings into practical recommendations, acceptance
+              criteria, and more maintainable workflows.
+            </p>
+          </article>
+        </div>
+
+        <a class="text-link skills-link" href="skill-evidence/skills.html">
+          See the full skills-to-evidence map <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="about-label">
+          <p class="eyebrow">About me</p>
+          <span class="about-rule" aria-hidden="true"></span>
+        </div>
+        <div class="about-copy">
+          <h2 id="about-title">
+            I bring frontline perspective to the systems people depend on.
+          </h2>
+          <div class="about-columns">
+            <p>
+              I am moving from restaurant operations into quality assurance
+              because I have seen how poorly matched systems affect good
+              employees and the people they serve.
+            </p>
+            <p>
+              I’m observant, methodical, careful with sensitive information,
+              and motivated by making technology easier—not harder—for people
+              navigating important tasks.
+            </p>
+          </div>
+          <a class="text-link" href="about.html">
+            Read more about my approach <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="contact-section" aria-labelledby="contact-title">
+        <p class="eyebrow">Let’s connect</p>
+        <h2 id="contact-title">Looking for a thoughtful QA teammate?</h2>
+        <p>
+          I’m interested in entry-level opportunities where careful testing,
+          troubleshooting, and clear documentation matter.
+        </p>
+        <a class="button button-light" href="mailto:itcouldbebetter404@gmail.com">
+          itcouldbebetter404@gmail.com
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Designed and documented by Jessica A.</p>
+      <p>Jacksonville metropolitan area · <span id="current-year">2026</span></p>
+    </footer>
+  </body>
+</html>

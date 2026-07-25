@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#102a2e">
+    <meta name="description" content="Public-Benefits Application Defect Summary — Jessica A.'s QA and systems portfolio.">
+    <title>Public-Benefits Application Defect Summary | Jessica A.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#article">Skip to main content</a>
+    <header class="site-header">
+      <a class="wordmark" href="../index.html" aria-label="Jessica A. portfolio home">
+        <span class="wordmark-mark" aria-hidden="true">JA</span>
+        <span>Jessica A.</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#about">About</a>
+        <a href="../assets/resume/Jessica_A_Resume.pdf">Résumé</a>
+        <a class="nav-contact" href="mailto:itcouldbebetter404@gmail.com">Contact</a>
+      </nav>
+    </header>
+    <main id="article">
+      <header class="article-hero">
+        <p class="eyebrow">Defect documentation</p>
+        <h1>Public-Benefits Application Defect Summary</h1>
+      </header>
+      <div class="article-layout">
+        <aside class="article-sidebar">
+          <p>Part of Jessica A.'s QA and systems portfolio.</p>
+          <a href="../index.html">← Portfolio home</a>
+        </aside>
+        <article class="prose">
+          <p>This public artifact translates the three observed findings into concise QA records. Personal data and identifying source material are intentionally excluded.</p>
+<p><a href="report.html">← Back to the full case study</a></p>
+<h2>PB-001 — Uploaded evidence appears in multiple evidence rows</h2>
+<p><strong>Area:</strong> Document upload and evidence mapping<br><strong>Type:</strong> Data-mapping or presentation defect<br><strong>Public reproduction status:</strong> Exact account-specific steps withheld; behavior was observed during an ordinary application workflow</p>
+<p><strong>Expected result</strong><br>Each evidence row clearly displays the document associated with that record. A document is reused only through an intentional and visible user action.</p>
+<p><strong>Actual result</strong><br>One uploaded document appeared in multiple evidence rows.</p>
+<p><strong>User impact</strong><br>The user may be unable to confirm whether each record has the correct supporting evidence.</p>
+<p><strong>Risk</strong><br>One document could appear to support multiple distinct records, creating ambiguity for both the user and a downstream reviewer.</p>
+<p><strong>Recommended verification</strong></p>
+<ul>
+<li>Confirm the document shown for every evidence row.</li>
+<li>Replace one attachment and verify that no unrelated row changes.</li>
+<li>Review the final submission summary for one-to-one mapping accuracy.</li>
+<li>Verify intentional document reuse is clearly explained.</li>
+</ul>
+<h2>PB-002 — Extracted entity does not match the source document</h2>
+<p><strong>Area:</strong> OCR and entity extraction<br><strong>Type:</strong> Data-extraction defect<br><strong>Public reproduction status:</strong> Source document withheld for privacy</p>
+<p><strong>Expected result</strong><br>The extracted name and entity type match the source document, or the system requests confirmation when confidence is insufficient.</p>
+<p><strong>Actual result</strong><br>An individual signer was classified as a different organizational entity.</p>
+<p><strong>User impact</strong><br>The user may not know which extracted value is incorrect or how to correct it.</p>
+<p><strong>Risk</strong><br>Inaccurate entity data may be carried into later review or submission steps.</p>
+<p><strong>Recommended verification</strong></p>
+<ul>
+<li>Test representative individual and organizational documents using fictional data.</li>
+<li>Compare extracted names and entity types with the source text.</li>
+<li>Verify correction controls are visible and usable.</li>
+<li>Confirm corrected information persists through final review.</li>
+</ul>
+<h2>PB-003 — Validation warning conflicts with visible values</h2>
+<p><strong>Area:</strong> Cross-field validation<br><strong>Type:</strong> Validation or feedback defect<br><strong>Public reproduction status:</strong> Exact application values withheld for privacy</p>
+<p><strong>Expected result</strong><br>The warning identifies the affected fields, reflects their current values, explains the rule, and clears after a valid correction.</p>
+<p><strong>Actual result</strong><br>The displayed warning did not correspond to the values visible to the user.</p>
+<p><strong>User impact</strong><br>The user cannot confidently determine what must be changed.</p>
+<p><strong>Risk</strong><br>The user may alter correct information, introduce new errors, or be unable to complete the workflow.</p>
+<p><strong>Recommended verification</strong></p>
+<ul>
+<li>Test values below, at, and above each relevant validation boundary.</li>
+<li>Confirm the warning names the correct fields.</li>
+<li>Correct the values and verify the warning clears.</li>
+<li>Leave and return to the page to verify the correction persists.</li>
+</ul>
+<h2>Documentation boundaries</h2>
+<p>These records describe observable behavior and plausible risk. They do not claim access to internal implementation details or establish the defects’ root causes.</p>
+<hr>
+<p><a href="report.html">← Back to the full case study</a></p>
+
+        </article>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>Designed and documented by Jessica A.</p>
+      <p>Jacksonville metropolitan area · 2026</p>
+    </footer>
+  </body>
+</html>

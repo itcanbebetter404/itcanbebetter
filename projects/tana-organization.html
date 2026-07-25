@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#102a2e">
+    <meta name="description" content="Tana Organization — Jessica A.'s QA and systems portfolio.">
+    <title>Tana Organization | Jessica A.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#article">Skip to main content</a>
+    <header class="site-header">
+      <a class="wordmark" href="../index.html" aria-label="Jessica A. portfolio home">
+        <span class="wordmark-mark" aria-hidden="true">JA</span>
+        <span>Jessica A.</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#about">About</a>
+        <a href="../assets/resume/Jessica_A_Resume.pdf">Résumé</a>
+        <a class="nav-contact" href="mailto:itcouldbebetter404@gmail.com">Contact</a>
+      </nav>
+    </header>
+    <main id="article">
+      <header class="article-hero">
+        <p class="eyebrow">Systems design case study</p>
+        <h1>Tana Organization</h1>
+      </header>
+      <div class="article-layout">
+        <aside class="article-sidebar">
+          <p>Part of Jessica A.'s QA and systems portfolio.</p>
+          <a href="../index.html">← Portfolio home</a>
+        </aside>
+        <article class="prose">
+          <p><strong>Systems Design Case Study</strong></p>
+<blockquote>
+<p>I needed a knowledge-management system that matched how I naturally collect and retrieve information, so I designed one around my actual behavior instead of forcing myself into a generic workflow.</p>
+</blockquote>
+<p><strong>Role:</strong> Systems designer and initial user<br><strong>Focus:</strong> Information architecture, workflow design, automation, documentation, privacy, and maintainability<br><strong>Platform:</strong> Tana<br><strong>Status:</strong> Private working system refined through continued use</p>
+<p><a href="projects.html">← Back to Projects</a></p>
+<hr>
+<h2>1. Overview</h2>
+<p>Tana Organization is a private personal knowledge-management system. It is not a standalone application, and this case study is not a tutorial about configuring Tana.</p>
+<p>The project demonstrates how I approached an everyday organizational problem as a systems-design challenge. I observed how I actually captured and looked for information, identified recurring points of friction, translated those observations into requirements, and designed a system around them. I then refined the design through real use.</p>
+<p>The result is a structured path from quick capture to useful knowledge and action:</p>
+<pre><code class="language-text">Capture → Processing Queue → Classification → Connected Knowledge → Action or Retrieval
+</code></pre>
+<p>This public case study describes the design reasoning and workflow without exposing the private information stored in the system.</p>
+<h2>2. The problem</h2>
+<p>Conventional organization methods often expected me to decide where information belonged at the moment I encountered it. That created friction at exactly the wrong time: while I was trying to record an idea, remember a commitment, preserve a useful reference, or move on to the next task.</p>
+<p>Several recurring problems emerged:</p>
+<ul>
+<li>Capture became slower when every item required an immediate filing decision.</li>
+<li>Rigid folder structures forced information into a single category even when it related to several areas.</li>
+<li>Inconsistent naming and placement made later retrieval depend too heavily on memory.</li>
+<li>Notes, tasks, references, and developing ideas could become mixed together without a clear processing step.</li>
+<li>A system could be carefully organized yet still fail if maintaining it required too much effort.</li>
+</ul>
+<p>The real problem was therefore not simply “where should I store notes?” It was:</p>
+<blockquote>
+<p>How can a knowledge system accept information quickly, help me make sense of it later, preserve useful connections, and make the result easy to act on or retrieve?</p>
+</blockquote>
+<h2>3. Behavioral observations</h2>
+<p>Because I was both the designer and the initial user, I treated my own repeated behavior as user-research evidence. I paid attention to what happened during capture, processing, and retrieval rather than beginning with an idealized organization chart.</p>
+<h3>Capture behavior</h3>
+<ul>
+<li>I needed to record information before its final category was always clear.</li>
+<li>Interrupting capture to make several metadata decisions increased the chance that I would postpone or abandon it.</li>
+<li>Different inputs could represent different future needs: an idea, a task, a reference, a person, a project, or something still unknown.</li>
+</ul>
+<h3>Organization behavior</h3>
+<ul>
+<li>One piece of information could be relevant to multiple contexts.</li>
+<li>Connections were often more useful than a single permanent location.</li>
+<li>Classification worked better as a deliberate processing activity than as a requirement for initial capture.</li>
+<li>The system needed enough structure to remain dependable without requiring constant reorganization.</li>
+</ul>
+<h3>Retrieval behavior</h3>
+<ul>
+<li>I did not always remember an exact title or storage location.</li>
+<li>I was more likely to remember a related project, person, topic, event, or intended action.</li>
+<li>Useful retrieval required multiple paths: search, relationships, views, and context.</li>
+<li>Information was most valuable when it could resurface at the moment of action.</li>
+</ul>
+<p>These observations changed the design goal. Instead of building the most detailed hierarchy possible, I needed to build a reliable flow that matched the way information naturally entered and left the system.</p>
+<h2>4. Requirements and constraints</h2>
+<p>I translated the behavioral observations into practical requirements.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Design response</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Capture must be fast</td>
+<td>Allow incomplete items to enter through a low-friction capture point.</td>
+</tr>
+<tr>
+<td>Classification should not interrupt thinking</td>
+<td>Separate initial capture from later processing.</td>
+</tr>
+<tr>
+<td>Information may belong to several contexts</td>
+<td>Use relationships and attributes instead of relying only on folders.</td>
+</tr>
+<tr>
+<td>Unprocessed material must remain visible</td>
+<td>Route new items into a processing queue rather than an invisible archive.</td>
+</tr>
+<tr>
+<td>Retrieval cannot depend on exact memory</td>
+<td>Support multiple retrieval paths through context, connection, and search.</td>
+</tr>
+<tr>
+<td>Knowledge should support action</td>
+<td>Distinguish actionable items from references and connect them where useful.</td>
+</tr>
+<tr>
+<td>The system must survive real use</td>
+<td>Keep required fields and maintenance steps purposeful and limited.</td>
+</tr>
+<tr>
+<td>Private information must remain private</td>
+<td>Exclude sensitive content from public examples and manage access and credentials separately.</td>
+</tr>
+</tbody></table>
+<p>Additional constraints shaped the system:</p>
+<ul>
+<li>I was designing for a real, changing set of needs rather than a fixed demonstration dataset.</li>
+<li>The architecture needed to accommodate uncertainty during capture.</li>
+<li>Automations could assist the workflow but could not become a hidden dependency that made the system hard to understand.</li>
+<li>Synchronization and access had to be considered without exposing private workspace details.</li>
+<li>Documentation needed to make future maintenance possible, including for a version of me who no longer remembered every design decision.</li>
+</ul>
+<h2>5. System and information architecture</h2>
+<p>The architecture separates the <em>state of information</em> from the <em>subject of information</em>.</p>
+<p>An item can move through states such as captured, awaiting review, classified, connected, actionable, or retained for retrieval. Its subject can independently relate to a project, area, person, topic, resource, or another relevant context.</p>
+<pre><code class="language-text">INPUTS
+Quick notes · ideas · commitments · references · observations
+                              │
+                              ▼
+CAPTURE LAYER
+One low-friction entry point; incomplete information is allowed
+                              │
+                              ▼
+PROCESSING LAYER
+Clarify meaning · decide whether it matters · identify next state
+                 │                         │
+                 ▼                         ▼
+STRUCTURE LAYER                         ACTION LAYER
+Types · attributes · relationships      Tasks · follow-ups · decisions
+                 │                         │
+                 └──────────┬──────────────┘
+                            ▼
+RETRIEVAL LAYER
+Search · contextual views · linked records · project or topic entry points
+</code></pre>
+<p>This model avoids treating every note as the same kind of object. It also avoids requiring the final structure to be known at the first moment of capture.</p>
+<h3>Core architectural principles</h3>
+<ol>
+<li><strong>Capture first, decide later.</strong> Uncertainty is an expected input state.</li>
+<li><strong>Use structure where it improves retrieval or action.</strong> Metadata must earn its maintenance cost.</li>
+<li><strong>Connect information across contexts.</strong> Relationships reduce the limitations of a single filing location.</li>
+<li><strong>Make unfinished processing visible.</strong> A queue turns ambiguity into a manageable workflow.</li>
+<li><strong>Preserve a clear route out of the system.</strong> Information should lead to action, informed decisions, or dependable retrieval.</li>
+</ol>
+<h2>6. Workflow</h2>
+<h3>Step 1: Capture</h3>
+<p>Information enters through a quick, forgiving capture point. The goal is to preserve meaning with minimal interruption. A captured item may initially contain only a short phrase and enough context to recognize it later.</p>
+<p><strong>Fabricated example:</strong><br>“Compare accessibility testing tools mentioned during portfolio research.”</p>
+<h3>Step 2: Processing queue</h3>
+<p>New items enter a visible queue. During processing, I ask:</p>
+<ul>
+<li>What is this?</li>
+<li>Does it require action?</li>
+<li>Is it useful as reference material?</li>
+<li>What context will help me find it again?</li>
+<li>Should it be connected to an existing project, topic, or person?</li>
+<li>Can it be deleted instead of organized?</li>
+</ul>
+<h3>Step 3: Classification</h3>
+<p>The item receives only the structure needed for its purpose. For example, the fabricated note might become a research item associated with a portfolio project and an accessibility-testing topic.</p>
+<p>Classification is not the finish line. It is a decision about how the item should behave in the system.</p>
+<h3>Step 4: Connected knowledge</h3>
+<p>The item is connected to relevant contexts. These connections create several possible retrieval routes without requiring duplicate copies.</p>
+<pre><code class="language-text">Fabricated research item
+├── Portfolio project
+├── Accessibility testing
+├── Tool comparison
+└── Possible learning task
+</code></pre>
+<h3>Step 5: Action or retrieval</h3>
+<p>If the information requires action, it can generate or support a task, follow-up, or decision. If it is reference material, it remains available through search and contextual views.</p>
+<p>The workflow is complete when the information has a clear role—not merely when it has been stored.</p>
+<h2>7. Key decisions and tradeoffs</h2>
+<h3>Delayed classification vs. immediate organization</h3>
+<p><strong>Decision:</strong> Permit rapid capture and classify later.<br><strong>Benefit:</strong> Capture remains fast and tolerant of uncertainty.<br><strong>Tradeoff:</strong> The processing queue must be reviewed consistently or it becomes a new form of clutter.</p>
+<h3>Relationships vs. deep folder hierarchies</h3>
+<p><strong>Decision:</strong> Emphasize connections and contextual attributes.<br><strong>Benefit:</strong> The same information can appear in several meaningful contexts without duplication.<br><strong>Tradeoff:</strong> Relationship design requires clear naming and restraint. Too many relationship types can make the system harder to understand.</p>
+<h3>Structured records vs. free-form notes</h3>
+<p><strong>Decision:</strong> Use structure for information that benefits from predictable behavior while preserving space for free-form thinking.<br><strong>Benefit:</strong> Structured information can support views, retrieval, and automation.<br><strong>Tradeoff:</strong> Excessive structure increases capture and maintenance costs.</p>
+<h3>Automation vs. transparency</h3>
+<p><strong>Decision:</strong> Automate repeatable routing or formatting only when the behavior remains understandable and recoverable.<br><strong>Benefit:</strong> Automation can reduce repetitive work and improve consistency.<br><strong>Tradeoff:</strong> Hidden or overly complex automation makes troubleshooting and future maintenance more difficult.</p>
+<h3>Personal fit vs. universal design</h3>
+<p><strong>Decision:</strong> Optimize the initial system for observed personal behavior.<br><strong>Benefit:</strong> The workflow solves a real problem for a real user.<br><strong>Tradeoff:</strong> A system designed for one user should not be presented as universally correct. Supporting other users would require additional research and validation.</p>
+<h2>8. Iterations</h2>
+<p>The architecture evolved through use rather than being completed in one design pass.</p>
+<pre><code class="language-text">Use the system
+      ↓
+Notice repeated friction or confusion
+      ↓
+Identify the underlying behavior
+      ↓
+Adjust a rule, relationship, view, or automation
+      ↓
+Document the decision
+      ↓
+Observe the result during continued use
+</code></pre>
+<p>Examples of the kinds of refinements this process supports include:</p>
+<ul>
+<li>reducing required metadata when capture feels too slow;</li>
+<li>clarifying categories that repeatedly overlap;</li>
+<li>changing views when useful information does not resurface;</li>
+<li>simplifying automation that is difficult to diagnose;</li>
+<li>improving documentation when a workflow is easy to forget;</li>
+<li>removing structures that add maintenance without improving retrieval.</li>
+</ul>
+<p>This approach treats friction as design feedback. It also prevents the system from becoming a static model of how I once expected myself to work.</p>
+<h2>9. Outcomes</h2>
+<p>The project produced a working personal knowledge system organized around an explicit information lifecycle rather than a collection of disconnected notes.</p>
+<p>Its most important outcome is not the number of configurations or automations created. It is the translation of observed behavior into a coherent system:</p>
+<ul>
+<li>Rapid capture is separated from deliberate processing.</li>
+<li>Unclassified information has a visible temporary state.</li>
+<li>Connections provide several routes back to useful knowledge.</li>
+<li>Actionable information can move toward tasks and decisions.</li>
+<li>Documentation records how and why the system works.</li>
+<li>Privacy boundaries define what remains private and what can be shown publicly.</li>
+</ul>
+<p>Because this is a personal system, I am not presenting controlled performance measurements or claiming that the design has been validated for other users. The evidence is the functioning workflow, the documented design decisions, and the refinements made through continued use.</p>
+<h2>10. Lessons learned</h2>
+<h3>Design for observed behavior</h3>
+<p>A workflow is more sustainable when it reflects what a user repeatedly does, including moments of uncertainty, rather than what an ideal process assumes they will do.</p>
+<h3>Separate capture from processing</h3>
+<p>Combining these activities can make both harder. Separating them preserves speed while still creating a path toward structure.</p>
+<h3>Structure has a cost</h3>
+<p>Every field, category, relationship, and automation creates future maintenance. The right amount of structure is the amount that improves retrieval, understanding, or action.</p>
+<h3>Retrieval is part of information architecture</h3>
+<p>Storing information successfully is not enough. A useful design anticipates the different clues a person may remember later.</p>
+<h3>Iteration requires documentation</h3>
+<p>Without a record of decisions, a personal system can become dependent on memory. Documentation makes the architecture easier to maintain, evaluate, and change.</p>
+<h3>Privacy is a design responsibility</h3>
+<p>A compelling portfolio story does not require exposing the underlying personal data. Fabricated examples and architectural explanations can demonstrate judgment while preserving confidentiality.</p>
+<h2>Privacy and maintainability</h2>
+<p>The working system contains private personal information, so the public portfolio version is intentionally separated from it.</p>
+<ul>
+<li>No personal notes or private Tana content</li>
+<li>No workspace names, node identifiers, internal links, or correspondence</li>
+<li>No tokens, credentials, environment files, or authentication details</li>
+<li>No machine-specific paths or synchronization details</li>
+<li>No screenshots unless they are recreated, fabricated, or thoroughly sanitized</li>
+</ul>
+<p>All examples on this page are generic and fabricated. Credentials belong in appropriate secret-management systems, synchronization must be verified rather than assumed, and automations should have documented purposes and understandable failure states.</p>
+<h2>Transferable professional skills</h2>
+<ul>
+<li><strong>Systems thinking:</strong> designing an end-to-end information lifecycle rather than isolated features</li>
+<li><strong>Information architecture:</strong> defining states, relationships, contexts, and retrieval paths</li>
+<li><strong>User-centered design:</strong> deriving requirements from observed behavior</li>
+<li><strong>Workflow design:</strong> moving information from input through decisions to useful outcomes</li>
+<li><strong>Automation judgment:</strong> balancing efficiency with transparency and maintainability</li>
+<li><strong>Iterative problem-solving:</strong> using recurring friction as evidence for refinement</li>
+<li><strong>Documentation:</strong> recording processes, decisions, constraints, and safe operating boundaries</li>
+<li><strong>Privacy awareness:</strong> separating private source material from public demonstrations</li>
+</ul>
+<hr>
+<p><a href="projects.html">← Back to Projects</a></p>
+
+        </article>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>Designed and documented by Jessica A.</p>
+      <p>Jacksonville metropolitan area · 2026</p>
+    </footer>
+  </body>
+</html>
