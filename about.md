@@ -48,7 +48,7 @@ I am also considering closely related entry-level roles where testing, troublesh
 
 ## Contact
 
-Professional email: [itcouldbebetter404@gmail.com](mailto:itcouldbebetter404@gmail.com)
+Professional email: [itcanbebetter404@gmail.com](mailto:itcanbebetter404@gmail.com)
 
 My reviewed résumé is available from the navigation on every portfolio page. A
 LinkedIn link can be added later after the profile is ready for public sharing.

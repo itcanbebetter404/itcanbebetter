@@ -83,7 +83,7 @@ function template({ title, label, body, depth }) {
         <a href="${prefix}index.html#skills">Skills</a>
         <a href="${prefix}index.html#about">About</a>
         <a href="${prefix}assets/resume/Jessica_A_Resume.pdf">Résumé</a>
-        <a class="nav-contact" href="mailto:itcouldbebetter404@gmail.com">Contact</a>
+        <a class="nav-contact" href="mailto:itcanbebetter404@gmail.com">Contact</a>
       </nav>
     </header>
     <main id="article">
