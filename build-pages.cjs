@@ -64,7 +64,7 @@ function template({ title, label, body, depth }) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#102a2e">
-    <meta name="description" content="${escapeHtml(title)} — Jessica A.'s QA and systems portfolio.">
+    <meta name="description" content="${escapeHtml(title)} — Jessica A.'s human-centered technology and systems portfolio.">
     <title>${escapeHtml(title)} | Jessica A.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,7 +93,7 @@ function template({ title, label, body, depth }) {
       </header>
       <div class="article-layout">
         <aside class="article-sidebar">
-          <p>Part of Jessica A.'s QA and systems portfolio.</p>
+          <p>Part of Jessica A.'s human-centered technology and systems portfolio.</p>
           <a href="${prefix}index.html">← Portfolio home</a>
         </aside>
         <article class="prose">

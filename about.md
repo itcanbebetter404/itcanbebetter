@@ -2,9 +2,9 @@
 
 **Jessica A. · Jacksonville Metropolitan Area**
 
-I am moving from frontline restaurant work into quality assurance because I have seen how poorly matched systems affect good employees. The people using operational tools every day often recognize friction, workarounds, and improvement opportunities that are difficult to discover through research alone.
+I am moving from frontline restaurant operations into human-centered technology because I have seen how poorly matched systems affect good employees and the people they serve. The people using operational tools every day often recognize friction, workarounds, and improvement opportunities that are difficult to discover through research alone.
 
-QA fits how I naturally solve problems: I notice inconsistencies, compare what should happen with what actually happens, preserve useful evidence, and explain findings clearly. I want to help teams understand the difference between intended system behavior and the way people actually experience it.
+Human-centered systems work fits how I naturally solve problems: I notice inconsistencies, compare what should happen with what actually happens, preserve useful evidence, and explain findings clearly. I want to help teams understand the difference between intended system behavior and the way people actually experience it.
 
 That matters most in high-stakes systems. People often have to navigate essential services while already carrying financial, health, family, or other pressures. Every avoidable inconsistency or unclear instruction adds to that burden. I want to help identify and remove those points of friction so technology makes it easier—not harder—to build a healthy and fulfilling life.
 
@@ -12,22 +12,18 @@ My portfolio combines hands-on QA investigation with systems and workflow design
 
 These projects reflect the kind of teammate I am working to become: observant, methodical, careful with sensitive information, and focused on helping a team understand what happened and what should happen next.
 
-## Target Roles
+## Primary Role Families
 
-My primary targets are:
+I am considering entry-level opportunities across:
 
-- Junior Manual QA Tester
-- QA Analyst
+- Civic technology or government digital services
+- UX, usability, or user research support
+- Quality assurance and user acceptance testing
+- Product, application, or implementation support
+- Junior business systems or workflow analysis
+- Responsible AI-assisted operations and automation support
 
-I am also considering closely related entry-level roles where testing, troubleshooting, documentation, and systems thinking are central:
-
-- Software Tester
-- Quality Assurance Associate
-- UAT Tester
-- Application Support Analyst
-- Product Support Specialist
-- Implementation Support Specialist
-- Junior Business Systems Analyst
+Realistic entry-level titles include Junior QA Analyst, UAT Tester, UX Research Assistant, Digital Services Specialist, Application Support Analyst, Product Support Specialist, Implementation Support Specialist, Junior Business Systems Analyst, and Operations or Automation Coordinator.
 
 ## How I Work
 
